@@ -1,0 +1,50 @@
+run 20261110-181229  2026-11-10T18:12:29.493986+05:30  network=mobile hotspot  llm=openai/gpt-oss-120b  stt=prisma-v3.0  tts=timbre-v2.5/Nalini
+requests=92  utterances=20  errors=0
+runs per utterance (both modes): {'clean_01.wav': 4, 'clean_02.wav': 4, 'clean_03.wav': 4, 'clean_04.wav': 4, 'clean_05.wav': 6, 'clean_06.wav': 4, 'clean_07.wav': 4, 'clean_08.wav': 6, 'clean_09.wav': 4, 'clean_10.wav': 4, 'clean_11.wav': 4, 'clean_12.wav': 4, 'clean_13.wav': 4, 'clean_14.wav': 4, 'clean_15.wav': 4, 'clean_16.wav': 4, 'clean_17.wav': 6, 'clean_18.wav': 6, 'clean_19.wav': 6, 'clean_20.wav': 6}
+
+== correctness (counts over requests; and over utterances where all runs agree)
+  transcript_nonempty   92 of  92 requests | utterances always ok: 20 of 20
+  roll_correct          65 of  72 requests | utterances always ok: 13 of 15
+  tool_call_correct     82 of  92 requests | utterances always ok: 17 of 20
+  answer_spoken         86 of  92 requests | utterances always ok: 19 of 20
+  end_to_end_ok         76 of  92 requests | utterances always ok: 16 of 20
+  failing utterances:
+    clean_04.wav (4/4 runs) heard: S one thousand two की fees कितनी due है? | tools: [('get_fee_status', 'S1004')] | reply: 'S one zero zero four, aapki fees due hai twelve thousand rup'
+    clean_08.wav (3/6 runs) heard: मुझे अपने FIFA status चाहिए, S one zero zero six। | tools: [('get_scholarship_status', 'S1006')] | reply: 'S one zero zero six, aapka scholarship abhi under review hai'
+    clean_20.wav (6/6 runs) heard: S one zero zero two का scholarship status और fees दोनों बताओ। | tools: [('get_scholarship_status', 'S1002'), ('get_fee_status', 'S1002')] | reply: ''
+    clean_16.wav (3/4 runs) heard: roll number S. One thousand four is my fees paid. | tools: [] | reply: 'Aapka roll number kya hai? कृपया पूरा बताइए.'
+
+== latency, seconds (n = requests with audio out; 6 without audio excluded)
+  stage                  mode        n    p50    p95    min    max
+  asr_latency            baseline   43   0.65   1.11  -2.07   1.79
+  asr_latency            streamed   43   0.64   0.83  -2.04   1.10
+  llm_ttft               baseline   43   1.73   3.85   0.28   7.91
+  llm_ttft               streamed   43   1.50   3.54   0.40   8.05
+  llm_first_sentence     baseline   43   1.78   3.88   0.30   7.97
+  llm_first_sentence     streamed   43   1.51   3.60   0.43   8.16
+  llm_total              baseline   43   1.79   3.93   0.30   7.97
+  llm_total              streamed   43   1.74   3.85   0.70   8.39
+  tts_ttfb               baseline   43   1.37   1.63   0.80   1.68
+  tts_ttfb               streamed   43   1.37   1.85   0.80   2.05
+  ttfa                   baseline   43   5.66   8.71   3.11  11.50
+  ttfa                   streamed   43   3.64   6.07   2.28  10.09
+  total_response_time    baseline   43  12.25  16.74   4.87  17.78
+  total_response_time    streamed   43  10.66  14.56   4.38  19.75
+  playback_gap_total     baseline   43   0.00   0.00   0.00   0.00
+  playback_gap_total     streamed   43   0.15   0.53   0.00   0.86
+
+== TTFA decomposition, medians (s) and share of median TTFA
+  baseline  ttfa=5.66  to_llm_start=0.65 (11%)  llm=1.79 (32%)  tts=3.19 (56%)
+  streamed  ttfa=3.64  to_llm_start=0.64 (18%)  llm=1.51 (42%)  tts=1.37 (38%)
+  (to_llm_start = ASR finalisation after end of audio; tts = baseline: full synthesis; streamed: first chunk incl. queueing)
+
+== H1: streamed TTFA lower in 39 of 43 pairs; saving p50=1.63s p95=4.27 min=-4.42 max=7.22
+   within baseline runs, what streaming could remove (medians): waiting for the rest of the LLM response after sentence 1 = 0.00s; waiting for full TTS audio instead of first byte = 1.91s
+   slower pairs:
+    clean_10.wav rep0: ttfa b=3.95 s=5.70; llm_first_sentence b=1.78 s=3.60
+    clean_12.wav rep1: ttfa b=3.93 s=4.00; llm_first_sentence b=0.96 s=1.50
+    clean_10.wav rep1: ttfa b=5.66 s=10.09; llm_first_sentence b=1.05 s=8.16
+    clean_08.wav rep2: ttfa b=5.81 s=6.39; llm_first_sentence b=1.72 s=4.98
+
+== ASR final before end of audio (negative asr_latency): 12 requests, files ['clean_18.wav', 'clean_19.wav']
+== streamed: replies split into >1 TTS chunk in 14 of 43; playback gap>0 in 35 of 43, gap p50=0.15s max=0.86s

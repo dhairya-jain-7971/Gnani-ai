@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+# keep only the reported benchmark run
+results/*
+!results/20261110-181229/
+!results/20261110-203730/
+# voice recordings are excluded by default (they are the author's voice); remove these lines to publish them
+testset/originals/
+testset/*.wav
+reply_*.wav

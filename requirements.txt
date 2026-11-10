@@ -1,0 +1,5 @@
+websockets>=13
+httpx
+numpy
+anthropic
+openai

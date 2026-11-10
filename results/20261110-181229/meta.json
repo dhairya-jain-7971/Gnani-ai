@@ -1,0 +1,17 @@
+{
+  "run_id": "20261110-181229",
+  "started": "2026-11-10T18:12:29.493986+05:30",
+  "machine": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.14",
+  "network": "mobile hotspot",
+  "region": "unknown",
+  "mock": false,
+  "repeats": 3,
+  "n_utterances": 20,
+  "stt_model": "prisma-v3.0",
+  "tts_model": "timbre-v2.5",
+  "tts_voice": "Nalini",
+  "llm_model": "openai/gpt-oss-120b",
+  "llm_temperature": 0.0,
+  "note": "t_end_of_speech = last audio frame sent (wav benchmark, no live endpointing). Playback is simulated (real-time clock), no audio device latency."
+}

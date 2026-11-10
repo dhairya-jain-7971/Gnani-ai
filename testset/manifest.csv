@@ -1,0 +1,21 @@
+file,condition,intent,roll_no,note
+clean_01.wav,clean,none,,no roll number: agent must ask once
+clean_02.wav,clean,none,,no roll number: agent must ask once
+clean_03.wav,clean,scholarship,S1004,
+clean_04.wav,clean,fee,S1002,
+clean_05.wav,clean,fee,S1001,
+clean_06.wav,clean,scholarship,S1007,
+clean_07.wav,clean,scholarship,S1010,
+clean_08.wav,clean,fee,S1006,
+clean_09.wav,clean,none,,no roll number: agent must ask once
+clean_10.wav,clean,scholarship,S1003,
+clean_11.wav,clean,scholarship,S1005,pure hindi
+clean_12.wav,clean,none,,pure hindi; no roll number
+clean_13.wav,clean,fee,S1008,pure hindi
+clean_14.wav,clean,scholarship,S1009,pure english
+clean_15.wav,clean,none,,pure english; no roll number
+clean_16.wav,clean,fee,S1004,pure english
+clean_17.wav,clean,scholarship,S1001,
+clean_18.wav,clean,fee,S1006,
+clean_19.wav,clean,scholarship,S1003,
+clean_20.wav,clean,scholarship,S1002,asks about both intents

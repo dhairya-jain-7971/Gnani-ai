@@ -1,0 +1,12 @@
+{
+  "S1001": {"name": "synthetic student 1", "scholarship": {"status": "approved", "amount": 50000, "next_step": "funds will be credited to the bank account"}, "fees": {"due": 0, "due_date": null}},
+  "S1002": {"name": "synthetic student 2", "scholarship": {"status": "rejected", "amount": 0, "next_step": "reapply next semester"}, "fees": {"due": 18000, "due_date": "2026-12-01"}},
+  "S1003": {"name": "synthetic student 3", "scholarship": {"status": "applied", "amount": 0, "next_step": "application received, awaiting review"}, "fees": {"due": 5000, "due_date": "2026-11-28"}},
+  "S1004": {"name": "synthetic student 4", "scholarship": {"status": "under_review", "amount": 25000, "next_step": "document verification"}, "fees": {"due": 12000, "due_date": "2026-12-05"}},
+  "S1005": {"name": "synthetic student 5", "scholarship": {"status": "approved", "amount": 30000, "next_step": "collect award letter from the office"}, "fees": {"due": 7500, "due_date": "2026-12-15"}},
+  "S1006": {"name": "synthetic student 6", "scholarship": {"status": "under_review", "amount": 40000, "next_step": "interview with the committee"}, "fees": {"due": 0, "due_date": null}},
+  "S1007": {"name": "synthetic student 7", "scholarship": {"status": "rejected", "amount": 0, "next_step": "appeal within thirty days"}, "fees": {"due": 22000, "due_date": "2026-11-30"}},
+  "S1008": {"name": "synthetic student 8", "scholarship": {"status": "applied", "amount": 0, "next_step": "upload income certificate"}, "fees": {"due": 9000, "due_date": "2026-12-10"}},
+  "S1009": {"name": "synthetic student 9", "scholarship": {"status": "approved", "amount": 60000, "next_step": "sign the acceptance form"}, "fees": {"due": 3500, "due_date": "2026-12-20"}},
+  "S1010": {"name": "synthetic student 10", "scholarship": {"status": "under_review", "amount": 20000, "next_step": "final committee decision"}, "fees": {"due": 15000, "due_date": "2027-01-05"}}
+}

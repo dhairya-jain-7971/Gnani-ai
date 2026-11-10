@@ -1,0 +1,21 @@
+file,condition,intent,roll_no,note
+noisy_01.wav,noisy_fan_snr10,none,,no roll number: agent must ask once
+noisy_02.wav,noisy_fan_snr10,none,,no roll number: agent must ask once
+noisy_03.wav,noisy_fan_snr10,scholarship,S1004,
+noisy_04.wav,noisy_fan_snr10,fee,S1002,
+noisy_05.wav,noisy_fan_snr10,fee,S1001,
+noisy_06.wav,noisy_fan_snr10,scholarship,S1007,
+noisy_07.wav,noisy_fan_snr10,scholarship,S1010,
+noisy_08.wav,noisy_fan_snr10,fee,S1006,
+noisy_09.wav,noisy_fan_snr10,none,,no roll number: agent must ask once
+noisy_10.wav,noisy_fan_snr10,scholarship,S1003,
+noisy_11.wav,noisy_fan_snr10,scholarship,S1005,pure hindi
+noisy_12.wav,noisy_fan_snr10,none,,pure hindi; no roll number
+noisy_13.wav,noisy_fan_snr10,fee,S1008,pure hindi
+noisy_14.wav,noisy_fan_snr10,scholarship,S1009,pure english
+noisy_15.wav,noisy_fan_snr10,none,,pure english; no roll number
+noisy_16.wav,noisy_fan_snr10,fee,S1004,pure english
+noisy_17.wav,noisy_fan_snr10,scholarship,S1001,
+noisy_18.wav,noisy_fan_snr10,fee,S1006,
+noisy_19.wav,noisy_fan_snr10,scholarship,S1003,
+noisy_20.wav,noisy_fan_snr10,scholarship,S1002,asks about both intents
